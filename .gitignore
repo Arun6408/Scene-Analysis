@@ -1,0 +1,3 @@
+FYP Dataset/
+experiments/**/*.pth
+__pycache__/
