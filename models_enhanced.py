@@ -296,7 +296,12 @@ class EnhancedTwoStepModel(nn.Module):
         
         # Project to consistent hidden dimension
         if features.size(-1) != self.hidden_dim:
-            features = nn.Linear(features.size(-1), self.hidden_dim).to(features.device)(features)
+            # Create a proper projection layer instead of creating it on-the-fly
+            if not hasattr(self, f'_feature_projection_{id(backbone)}'):
+                setattr(self, f'_feature_projection_{id(backbone)}', 
+                       nn.Linear(features.size(-1), self.hidden_dim).to(features.device))
+            projection_layer = getattr(self, f'_feature_projection_{id(backbone)}')
+            features = projection_layer(features)
         
         return features
     
@@ -549,16 +554,18 @@ class LabelSmoothingLoss(nn.Module):
         return loss
 
 
-def create_enhanced_model() -> Tuple['SimplifiedTwoStepModel', EnhancedLoss]:
-    """Create simplified two-step model and loss function for fast training"""
-    # Use simplified model for faster training
-    model = SimplifiedTwoStepModel(
+def create_enhanced_model() -> Tuple['EnhancedTwoStepModel', EnhancedLoss]:
+    """Create enhanced two-step model and loss function for maximum accuracy"""
+    # Use enhanced model for maximum accuracy
+    model = EnhancedTwoStepModel(
         backbone=config.backbone,
         num_action_classes=len(config.action_classes),
         num_actor_classes=len(config.actor_classes),
         shared_backbone=config.shared_backbone,
         dropout_rate=config.dropout_rate,
-        hidden_dim=config.hidden_dim
+        hidden_dim=config.hidden_dim,
+        num_heads=config.num_heads,
+        num_layers=config.num_layers
     )
     
     loss_fn = EnhancedLoss(
@@ -658,8 +665,11 @@ class SimplifiedTwoStepModel(nn.Module):
         # Create shared backbone
         self.feature_extractor = self._create_backbone()
         
-        # Simple feature projection
-        self.feature_projection = nn.Linear(1280, hidden_dim)  # EfficientNet-B0 output size
+        # Get the actual feature dimension from the backbone
+        self.feature_dim = self._get_backbone_feature_dim()
+        
+        # Dynamic feature projection based on backbone output size
+        self.feature_projection = nn.Linear(self.feature_dim, hidden_dim)
         
         # Simple classifiers
         self.action_classifier = nn.Sequential(
@@ -675,6 +685,21 @@ class SimplifiedTwoStepModel(nn.Module):
             nn.Dropout(dropout_rate),
             nn.Linear(hidden_dim // 2, num_actor_classes)
         )
+    
+    def _get_backbone_feature_dim(self) -> int:
+        """Get the actual feature dimension from the backbone"""
+        # Create a dummy input to get the feature dimension
+        dummy_input = torch.randn(1, 3, 224, 224)
+        
+        with torch.no_grad():
+            features = self.feature_extractor(dummy_input)
+            
+        if features.dim() == 4:
+            # Global average pooling to get feature vector
+            features = F.adaptive_avg_pool2d(features, (1, 1))
+            features = features.squeeze(-1).squeeze(-1)
+        
+        return features.size(-1)
     
     def _create_backbone(self) -> nn.Module:
         """Create simplified backbone network"""

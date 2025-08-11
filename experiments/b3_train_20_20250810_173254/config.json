@@ -1,0 +1,200 @@
+{
+  "num_epochs": 20,
+  "batch_size": 4,
+  "learning_rate": 0.0001,
+  "weight_decay": 0.0001,
+  "backbone": "efficientnet_b3",
+  "shared_backbone": false,
+  "num_frames": 16,
+  "frame_size": [
+    192,
+    192
+  ],
+  "temporal_stride": 1,
+  "val_split": 0.15,
+  "optimizer": "adam",
+  "scheduler": "step",
+  "action_loss_type": "cross_entropy",
+  "actor_loss_type": "cross_entropy",
+  "dropout_rate": 0.1,
+  "mixup_alpha": 0.0,
+  "cutmix_prob": 0.0,
+  "device": "cuda",
+  "num_workers": 4,
+  "mixed_precision": true,
+  "num_action_classes": 8,
+  "num_actor_classes": 7,
+  "action_classes": [
+    "climbing",
+    "crawling",
+    "eating",
+    "flying",
+    "jumping",
+    "rolling",
+    "running",
+    "walking"
+  ],
+  "actor_classes": [
+    "adult",
+    "baby",
+    "ball",
+    "bird",
+    "car",
+    "cat",
+    "dog"
+  ],
+  "action_to_actors": {
+    "climbing": [
+      "adult",
+      "baby",
+      "bird",
+      "cat"
+    ],
+    "crawling": [
+      "adult",
+      "baby",
+      "dog"
+    ],
+    "eating": [
+      "adult",
+      "bird",
+      "cat",
+      "dog"
+    ],
+    "flying": [
+      "ball",
+      "bird",
+      "car"
+    ],
+    "jumping": [
+      "adult",
+      "ball",
+      "bird",
+      "car",
+      "cat",
+      "dog"
+    ],
+    "rolling": [
+      "adult",
+      "baby",
+      "ball",
+      "bird",
+      "car",
+      "cat",
+      "dog"
+    ],
+    "running": [
+      "adult",
+      "car",
+      "cat",
+      "dog"
+    ],
+    "walking": [
+      "adult",
+      "baby",
+      "bird",
+      "cat",
+      "dog"
+    ]
+  },
+  "actor_to_actions": {
+    "adult": [
+      "climbing",
+      "crawling",
+      "eating",
+      "jumping",
+      "rolling",
+      "running",
+      "walking"
+    ],
+    "baby": [
+      "climbing",
+      "crawling",
+      "rolling",
+      "walking"
+    ],
+    "ball": [
+      "flying",
+      "jumping",
+      "rolling"
+    ],
+    "bird": [
+      "climbing",
+      "eating",
+      "flying",
+      "jumping",
+      "rolling",
+      "walking"
+    ],
+    "car": [
+      "flying",
+      "jumping",
+      "rolling",
+      "running"
+    ],
+    "cat": [
+      "climbing",
+      "eating",
+      "jumping",
+      "rolling",
+      "running",
+      "walking"
+    ],
+    "dog": [
+      "crawling",
+      "eating",
+      "jumping",
+      "rolling",
+      "running",
+      "walking"
+    ]
+  },
+  "valid_labels": [
+    11,
+    12,
+    13,
+    15,
+    16,
+    17,
+    18,
+    19,
+    21,
+    22,
+    26,
+    28,
+    29,
+    34,
+    35,
+    36,
+    39,
+    41,
+    43,
+    44,
+    45,
+    46,
+    48,
+    49,
+    54,
+    55,
+    56,
+    57,
+    59,
+    61,
+    63,
+    65,
+    66,
+    67,
+    68,
+    69,
+    72,
+    73,
+    75,
+    76,
+    77,
+    78,
+    79
+  ],
+  "hidden_dim": 512,
+  "num_heads": 4,
+  "num_layers": 2
+}

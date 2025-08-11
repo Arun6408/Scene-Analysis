@@ -1,0 +1,10 @@
+2025-08-10 23:29:24,777 - INFO - Loaded checkpoint from epoch 5
+2025-08-10 23:29:24,779 - INFO - Running comprehensive test evaluation...
+2025-08-10 23:29:24,779 - WARNING - No best checkpoint found, using current model
+2025-08-10 23:31:05,825 - INFO - Test Results:
+2025-08-10 23:31:05,825 - INFO -   Loss: 2.3847
+2025-08-10 23:31:05,826 - INFO -   Action Accuracy: 64.75%
+2025-08-10 23:31:05,826 - INFO -   Actor Accuracy: 84.18%
+2025-08-10 23:31:05,826 - INFO -   Combined Accuracy: 56.84%
+2025-08-10 23:31:05,826 - INFO -   Action F1: 0.6396
+2025-08-10 23:31:05,826 - INFO -   Actor F1: 0.8393

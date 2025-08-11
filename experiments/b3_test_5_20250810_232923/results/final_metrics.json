@@ -1,0 +1,341 @@
+{
+  "experiment_dir": "experiments\\test_5_20250810_232923",
+  "best_val_accuracy": 62.08112874779541,
+  "best_action_accuracy": 69.66490299823633,
+  "best_actor_accuracy": 86.24338624338624,
+  "test_metrics": {
+    "loss": 2.3847435953464102,
+    "action_acc": 64.74530831099196,
+    "actor_acc": 84.1823056300268,
+    "combined_acc": 56.83646112600537,
+    "action_f1": 0.6396168993227218,
+    "actor_f1": 0.8393157181680987
+  },
+  "train_history": {
+    "loss": [
+      3.2343266311688788,
+      2.1006628913469796,
+      1.511396042773171,
+      1.1205600583065465,
+      0.8803042082336385,
+      0.677735316242594
+    ],
+    "action_acc": [
+      36.70988654781199,
+      55.753646677471636,
+      66.89627228525121,
+      75.32414910858995,
+      80.91572123176661,
+      84.35980551053484
+    ],
+    "actor_acc": [
+      45.98865478119935,
+      72.36628849270664,
+      82.05024311183145,
+      87.60129659643437,
+      89.99189627228526,
+      93.11183144246354
+    ],
+    "combined_acc": [
+      18.233387358184768,
+      42.74716369529984,
+      56.3614262560778,
+      66.6936790923825,
+      73.82495948136143,
+      79.37601296596435
+    ]
+  },
+  "val_history": {
+    "loss": [
+      1.9416771824930754,
+      1.7405852175934213,
+      1.731489487517048,
+      1.9373190400885865,
+      2.0524608224210605,
+      2.202603316013242
+    ],
+    "action_acc": [
+      53.086419753086425,
+      59.9647266313933,
+      65.78483245149911,
+      69.84126984126983,
+      69.48853615520282,
+      69.66490299823633
+    ],
+    "actor_acc": [
+      76.19047619047619,
+      81.83421516754849,
+      82.01058201058201,
+      85.00881834215167,
+      82.71604938271605,
+      86.24338624338624
+    ],
+    "combined_acc": [
+      43.03350970017637,
+      51.85185185185185,
+      57.84832451499118,
+      61.022927689594354,
+      60.317460317460316,
+      62.08112874779541
+    ]
+  },
+  "config": {
+    "dataset_root": "FYP Dataset",
+    "videos_dir": "FYP Dataset/clips320H",
+    "annotations_dir": "FYP Dataset/Annotations",
+    "csv_file": "FYP Dataset/videoset.csv",
+    "input_channels": 3,
+    "frame_size": [
+      192,
+      192
+    ],
+    "num_frames": 16,
+    "temporal_stride": 1,
+    "batch_size": 4,
+    "num_epochs": 30,
+    "learning_rate": 0.0001,
+    "weight_decay": 0.0001,
+    "warmup_epochs": 5,
+    "backbone": "efficientnet_b3",
+    "shared_backbone": false,
+    "use_attention": false,
+    "use_temporal_modeling": false,
+    "use_feature_fusion": false,
+    "use_augmentation": true,
+    "horizontal_flip_prob": 0.5,
+    "color_jitter_prob": 0.3,
+    "random_crop_prob": 0.5,
+    "mixup_alpha": 0.0,
+    "cutmix_prob": 0.0,
+    "auto_augment": false,
+    "random_erasing": false,
+    "temporal_augmentation": false,
+    "action_loss_type": "cross_entropy",
+    "actor_loss_type": "cross_entropy",
+    "label_smoothing": 0.0,
+    "focal_alpha": 0.25,
+    "focal_gamma": 2.0,
+    "action_weight": 1.0,
+    "actor_weight": 1.0,
+    "optimizer": "adam",
+    "scheduler": "step",
+    "step_size": 30,
+    "gamma": 0.1,
+    "min_lr": 1e-06,
+    "dropout_rate": 0.1,
+    "stochastic_depth": 0.0,
+    "drop_path_rate": 0.0,
+    "eval_frequency": 1,
+    "save_frequency": 1,
+    "log_dir": "logs_enhanced",
+    "model_dir": "models_enhanced",
+    "experiment_name": "test_5",
+    "use_wandb": false,
+    "use_tensorboard": false,
+    "device": "cuda",
+    "num_workers": 4,
+    "pin_memory": true,
+    "mixed_precision": true,
+    "val_split": 0.15,
+    "test_split": 0.15,
+    "action_classes": [
+      "climbing",
+      "crawling",
+      "eating",
+      "flying",
+      "jumping",
+      "rolling",
+      "running",
+      "walking"
+    ],
+    "actor_classes": [
+      "adult",
+      "baby",
+      "ball",
+      "bird",
+      "car",
+      "cat",
+      "dog"
+    ],
+    "action_to_actors": {
+      "climbing": [
+        "adult",
+        "baby",
+        "bird",
+        "cat"
+      ],
+      "crawling": [
+        "adult",
+        "baby",
+        "dog"
+      ],
+      "eating": [
+        "adult",
+        "bird",
+        "cat",
+        "dog"
+      ],
+      "flying": [
+        "ball",
+        "bird",
+        "car"
+      ],
+      "jumping": [
+        "adult",
+        "ball",
+        "bird",
+        "car",
+        "cat",
+        "dog"
+      ],
+      "rolling": [
+        "adult",
+        "baby",
+        "ball",
+        "bird",
+        "car",
+        "cat",
+        "dog"
+      ],
+      "running": [
+        "adult",
+        "car",
+        "cat",
+        "dog"
+      ],
+      "walking": [
+        "adult",
+        "baby",
+        "bird",
+        "cat",
+        "dog"
+      ]
+    },
+    "actor_to_actions": {
+      "adult": [
+        "climbing",
+        "crawling",
+        "eating",
+        "jumping",
+        "rolling",
+        "running",
+        "walking"
+      ],
+      "baby": [
+        "climbing",
+        "crawling",
+        "rolling",
+        "walking"
+      ],
+      "ball": [
+        "flying",
+        "jumping",
+        "rolling"
+      ],
+      "bird": [
+        "climbing",
+        "eating",
+        "flying",
+        "jumping",
+        "rolling",
+        "walking"
+      ],
+      "car": [
+        "flying",
+        "jumping",
+        "rolling",
+        "running"
+      ],
+      "cat": [
+        "climbing",
+        "eating",
+        "jumping",
+        "rolling",
+        "running",
+        "walking"
+      ],
+      "dog": [
+        "crawling",
+        "eating",
+        "jumping",
+        "rolling",
+        "running",
+        "walking"
+      ]
+    },
+    "valid_labels": [
+      11,
+      12,
+      13,
+      15,
+      16,
+      17,
+      18,
+      19,
+      21,
+      22,
+      26,
+      28,
+      29,
+      34,
+      35,
+      36,
+      39,
+      41,
+      43,
+      44,
+      45,
+      46,
+      48,
+      49,
+      54,
+      55,
+      56,
+      57,
+      59,
+      61,
+      63,
+      65,
+      66,
+      67,
+      68,
+      69,
+      72,
+      73,
+      75,
+      76,
+      77,
+      78,
+      79
+    ],
+    "hidden_dim": 512,
+    "num_heads": 4,
+    "num_layers": 2,
+    "mlp_ratio": 2.0
+  },
+  "dataset_stats": {
+    "train_samples": 2647,
+    "val_samples": 567,
+    "test_samples": 568,
+    "action_counts": {
+      "rolling": 732,
+      "jumping": 625,
+      "walking": 573,
+      "eating": 415,
+      "climbing": 410,
+      "running": 406,
+      "crawling": 311,
+      "flying": 310
+    },
+    "actor_counts": {
+      "adult": 715,
+      "dog": 673,
+      "cat": 620,
+      "bird": 618,
+      "car": 423,
+      "baby": 418,
+      "ball": 315
+    }
+  },
+  "timestamp": "2025-08-10T23:31:07.844588"
+}

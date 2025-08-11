@@ -1,0 +1,42 @@
+2025-08-10 17:32:55,326 - INFO - Starting simplified training...
+2025-08-10 17:32:55,326 - INFO - Dataset: 2647 train, 567 val, 568 test
+2025-08-10 17:47:45,516 - INFO - Saved best checkpoint with accuracy: 43.03%
+2025-08-10 17:47:45,517 - INFO - Epoch 1/20 - Train Loss: 3.2343, Val Loss: 1.9417, Val Action Acc: 53.09%, Val Actor Acc: 76.19%, Val Combined Acc: 43.03%
+2025-08-10 18:01:39,842 - INFO - Saved best checkpoint with accuracy: 51.85%
+2025-08-10 18:01:39,843 - INFO - Epoch 2/20 - Train Loss: 2.1007, Val Loss: 1.7406, Val Action Acc: 59.96%, Val Actor Acc: 81.83%, Val Combined Acc: 51.85%
+2025-08-10 18:15:34,006 - INFO - Saved best checkpoint with accuracy: 57.85%
+2025-08-10 18:15:34,006 - INFO - Epoch 3/20 - Train Loss: 1.5114, Val Loss: 1.7315, Val Action Acc: 65.78%, Val Actor Acc: 82.01%, Val Combined Acc: 57.85%
+2025-08-10 18:29:30,790 - INFO - Saved best checkpoint with accuracy: 61.02%
+2025-08-10 18:29:30,791 - INFO - Epoch 4/20 - Train Loss: 1.1206, Val Loss: 1.9373, Val Action Acc: 69.84%, Val Actor Acc: 85.01%, Val Combined Acc: 61.02%
+2025-08-10 18:43:25,648 - INFO - Epoch 5/20 - Train Loss: 0.8803, Val Loss: 2.0525, Val Action Acc: 69.49%, Val Actor Acc: 82.72%, Val Combined Acc: 60.32%
+2025-08-10 18:57:19,877 - INFO - Saved best checkpoint with accuracy: 62.08%
+2025-08-10 18:57:19,877 - INFO - Epoch 6/20 - Train Loss: 0.6777, Val Loss: 2.2026, Val Action Acc: 69.66%, Val Actor Acc: 86.24%, Val Combined Acc: 62.08%
+2025-08-10 19:11:16,146 - INFO - Saved best checkpoint with accuracy: 62.26%
+2025-08-10 19:11:16,146 - INFO - Epoch 7/20 - Train Loss: 0.5286, Val Loss: 2.5812, Val Action Acc: 69.31%, Val Actor Acc: 86.60%, Val Combined Acc: 62.26%
+2025-08-10 19:25:13,710 - INFO - Epoch 8/20 - Train Loss: 0.4740, Val Loss: 3.1491, Val Action Acc: 69.14%, Val Actor Acc: 81.83%, Val Combined Acc: 60.85%
+2025-08-10 19:39:10,241 - INFO - Epoch 9/20 - Train Loss: 0.4062, Val Loss: 2.5336, Val Action Acc: 68.61%, Val Actor Acc: 83.42%, Val Combined Acc: 58.91%
+2025-08-10 19:53:16,341 - INFO - Epoch 10/20 - Train Loss: 0.3481, Val Loss: 2.7948, Val Action Acc: 70.02%, Val Actor Acc: 85.01%, Val Combined Acc: 61.38%
+2025-08-10 20:10:25,536 - INFO - Saved best checkpoint with accuracy: 64.55%
+2025-08-10 20:10:25,536 - INFO - Epoch 11/20 - Train Loss: 0.2892, Val Loss: 2.8542, Val Action Acc: 74.25%, Val Actor Acc: 83.95%, Val Combined Acc: 64.55%
+2025-08-10 20:34:29,728 - INFO - Epoch 12/20 - Train Loss: 0.2495, Val Loss: 2.7583, Val Action Acc: 72.84%, Val Actor Acc: 86.07%, Val Combined Acc: 64.37%
+2025-08-10 20:51:35,890 - INFO - Epoch 13/20 - Train Loss: 0.2581, Val Loss: 2.9381, Val Action Acc: 70.55%, Val Actor Acc: 85.36%, Val Combined Acc: 61.55%
+2025-08-10 21:14:32,508 - INFO - Epoch 14/20 - Train Loss: 0.2262, Val Loss: 3.1257, Val Action Acc: 71.96%, Val Actor Acc: 82.54%, Val Combined Acc: 63.32%
+2025-08-10 21:41:19,190 - INFO - Epoch 15/20 - Train Loss: 0.2523, Val Loss: 2.6568, Val Action Acc: 71.96%, Val Actor Acc: 86.42%, Val Combined Acc: 64.55%
+2025-08-10 21:58:56,469 - INFO - Epoch 16/20 - Train Loss: 0.2097, Val Loss: 4.6035, Val Action Acc: 70.02%, Val Actor Acc: 84.13%, Val Combined Acc: 61.73%
+2025-08-10 22:17:33,062 - INFO - Saved best checkpoint with accuracy: 65.26%
+2025-08-10 22:17:33,063 - INFO - Epoch 17/20 - Train Loss: 0.1874, Val Loss: 3.0660, Val Action Acc: 73.19%, Val Actor Acc: 85.54%, Val Combined Acc: 65.26%
+2025-08-10 22:35:11,077 - INFO - Saved best checkpoint with accuracy: 65.78%
+2025-08-10 22:35:11,078 - INFO - Epoch 18/20 - Train Loss: 0.1782, Val Loss: 3.3823, Val Action Acc: 72.13%, Val Actor Acc: 87.30%, Val Combined Acc: 65.78%
+2025-08-10 22:52:43,149 - INFO - Epoch 19/20 - Train Loss: 0.1563, Val Loss: 3.4939, Val Action Acc: 72.31%, Val Actor Acc: 84.13%, Val Combined Acc: 63.32%
+2025-08-10 23:09:59,242 - INFO - Epoch 20/20 - Train Loss: 0.1787, Val Loss: 3.6312, Val Action Acc: 73.02%, Val Actor Acc: 84.30%, Val Combined Acc: 64.20%
+2025-08-10 23:09:59,787 - INFO - Saved final checkpoint
+2025-08-10 23:09:59,787 - INFO - Training completed successfully!
+2025-08-10 23:09:59,789 - INFO - Running comprehensive test evaluation...
+2025-08-10 23:10:00,199 - INFO - Loaded checkpoint from epoch 17
+2025-08-10 23:11:56,813 - INFO - Test Results:
+2025-08-10 23:11:56,813 - INFO -   Loss: 3.8409
+2025-08-10 23:11:56,813 - INFO -   Action Accuracy: 67.43%
+2025-08-10 23:11:56,814 - INFO -   Actor Accuracy: 83.78%
+2025-08-10 23:11:56,814 - INFO -   Combined Accuracy: 60.32%
+2025-08-10 23:11:56,814 - INFO -   Action F1: 0.6693
+2025-08-10 23:11:56,814 - INFO -   Actor F1: 0.8361

@@ -12,56 +12,56 @@ class EnhancedConfig:
     
     # Optimized model parameters for RTX 3050 4GB
     input_channels: int = 3
-    frame_size: Tuple[int, int] = (224, 224)  # Reduced resolution for speed
-    num_frames: int = 8  # Reduced frames for faster training
-    temporal_stride: int = 2  # Increased stride for faster processing
+    frame_size: Tuple[int, int] = (192, 192)  # Reduced resolution for speed
+    num_frames: int = 16  # Reduced frames for faster training
+    temporal_stride: int = 1  # Increased stride for faster processing
     
     # Training parameters optimized for speed
-    batch_size: int = 8  # Increased batch size for RTX 3050
+    batch_size: int = 4  # Increased batch size for RTX 3050
     num_epochs: int = 30  
     learning_rate: float = 1e-4  # Slightly higher for faster convergence
     weight_decay: float = 1e-4
-    warmup_epochs: int = 0  # No warmup for 1 epoch
+    warmup_epochs: int = 5  # No warmup for 1 epoch
     
     # Simplified model architecture for speed
-    backbone: str = "efficientnet_b0"  # Smaller backbone for speed
+    backbone: str = "efficientnet_b4"  
     shared_backbone: bool = False  # Shared backbone to save memory
-    use_attention: bool = False  # Disable attention for speed
-    use_temporal_modeling: bool = False  # Disable temporal modeling for speed
-    use_feature_fusion: bool = False  # Disable feature fusion for speed
+    use_attention: bool = True  # Disable attention for speed
+    use_temporal_modeling: bool = True  # Disable temporal modeling for speed
+    use_feature_fusion: bool = True  # Disable feature fusion for speed
     
-    # Simplified data augmentation
+   # Enhanced data augmentation
     use_augmentation: bool = True
-    horizontal_flip_prob: float = 0.5
-    color_jitter_prob: float = 0.3  # Reduced for speed
-    random_crop_prob: float = 0.5  # Reduced for speed
-    mixup_alpha: float = 0.0  # Disable mixup for speed
-    cutmix_prob: float = 0.0  # Disable cutmix for speed
-    auto_augment: bool = False  # Disable auto augment for speed
-    random_erasing: bool = False  # Disable random erasing for speed
-    temporal_augmentation: bool = False  # Disable temporal augmentation for speed
+    horizontal_flip_prob: float = 0.5        # Common strong augmentation
+    color_jitter_prob: float = 0.4           # Slightly higher for better color variation
+    random_crop_prob: float = 0.6            # Good for spatial robustness
+    mixup_alpha: float = 0.2                 # Light mixup, helps regularization
+    cutmix_prob: float = 0.3                  # Occasional cutmix for diversity
+    auto_augment: bool = True                 # Let model learn strong aug policies
+    random_erasing: bool = True               # Helps occlusion robustness
+    temporal_augmentation: bool = True        # Important for video datasets
+
     
     # Simplified loss functions
-    action_loss_type: str = "cross_entropy"  # Simpler loss for speed
-    actor_loss_type: str = "cross_entropy"  # Simpler loss for speed
-    label_smoothing: float = 0.0  # Disable label smoothing for speed
+    action_loss_type: str = "focal"  # Enchanced loss for performance
+    actor_loss_type: str = "focal"  # Enchanced loss for performance
+    label_smoothing: float = 0.1  # Disable label smoothing for speed
     focal_alpha: float = 0.25
     focal_gamma: float = 2.0
     action_weight: float = 1.0
     actor_weight: float = 1.0
     
     # Simplified optimization
-    optimizer: str = "adam"  # Simpler optimizer for speed
-    scheduler: str = "step"  # Simpler scheduler for speed
+    optimizer: str = "adamw"  # Simpler optimizer for speed
+    scheduler: str = "cosine_warmup"  # Simpler scheduler for speed
     step_size: int = 30
     gamma: float = 0.1
     min_lr: float = 1e-6
-    
-    # Simplified regularization
-    dropout_rate: float = 0.1  # Reduced dropout for speed
-    stochastic_depth: float = 0.0  # Disable stochastic depth for speed
-    drop_path_rate: float = 0.0  # Disable drop path for speed
-    
+    # Enhanced regularization
+    dropout_rate: float = 0.4          # Slightly higher to improve generalization
+    stochastic_depth: float = 0.1      # Light stochastic depth for deeper models
+    drop_path_rate: float = 0.1        # Mild drop path for ResNet/EfficientNet
+
     # Evaluation and saving
     eval_frequency: int = 1
     save_frequency: int = 1  # Save every epoch for 1 epoch test
@@ -89,12 +89,13 @@ class EnhancedConfig:
     action_to_actors: Dict[str, List[str]] = None
     actor_to_actions: Dict[str, List[str]] = None
     valid_labels: List[int] = None
-    
-    # Simplified model specific parameters
-    hidden_dim: int = 512  # Reduced hidden dimension for speed
-    num_heads: int = 4  # Reduced number of heads for speed
-    num_layers: int = 2  # Reduced number of layers for speed
-    mlp_ratio: float = 2.0  # Reduced MLP ratio for speed
+
+    # Enhanced model parameters
+    hidden_dim: int = 1024      # More expressive feature space
+    num_heads: int = 8         # Standard for good attention resolution
+    num_layers: int = 6        # Deeper for richer representation
+    mlp_ratio: float = 4.0     # Common choice for transformer blocks
+
     
     def __post_init__(self):
         # Define action and actor classes

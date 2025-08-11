@@ -2,7 +2,8 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 from torch.optim.lr_scheduler import CosineAnnealingWarmRestarts, StepLR, CosineAnnealingLR
-from torch.cuda.amp import GradScaler, autocast
+from torch.cuda.amp import GradScaler
+from torch.amp import autocast
 import numpy as np
 import os
 import json
@@ -17,7 +18,7 @@ import logging
 from tqdm import tqdm
 
 from config_enhanced import config
-from models_enhanced import create_enhanced_model, calculate_model_complexity
+from models_enhanced import create_enhanced_model, create_simplified_model, calculate_model_complexity
 from dataset_enhanced import create_enhanced_data_loaders, get_dataset_statistics
 
 
@@ -36,8 +37,8 @@ class EnhancedTrainer:
         self.train_loader, self.val_loader, self.test_loader = create_enhanced_data_loaders()
         
         # Create model and loss function
-        print("Creating enhanced model...")
-        self.model, self.loss_fn = create_enhanced_model()
+        print("Creating simplified model for faster training...")
+        self.model, self.loss_fn = create_simplified_model()
         self.model = self.model.to(self.device)
         
         # Create optimizer and scheduler
@@ -168,7 +169,7 @@ class EnhancedTrainer:
             
             # Forward pass with mixed precision
             if config.mixed_precision:
-                with autocast():
+                with autocast('cuda'):
                     outputs = self.model(frames)
                     loss_dict = self.loss_fn(
                         outputs['action_logits'],
@@ -262,7 +263,7 @@ class EnhancedTrainer:
                 
                 # Forward pass
                 if config.mixed_precision:
-                    with autocast():
+                    with autocast('cuda'):
                         outputs = self.model(frames)
                         loss_dict = self.loss_fn(
                             outputs['action_logits'],
@@ -539,7 +540,7 @@ class EnhancedTrainer:
                 
                 # Forward pass
                 if config.mixed_precision:
-                    with autocast():
+                    with autocast('cuda'):
                         outputs = self.model(frames)
                         loss_dict = self.loss_fn(
                             outputs['action_logits'],

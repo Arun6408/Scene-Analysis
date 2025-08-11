@@ -1,0 +1,65 @@
+================================================================================
+ENHANCED TWO-STEP ACTION RECOGNITION EXPERIMENT SUMMARY
+================================================================================
+
+Experiment Directory: experiments\two_step_20250810_173254
+Timestamp: 2025-08-10 23:11:58
+
+MODEL CONFIGURATION:
+----------------------------------------
+Backbone: efficientnet_b3
+Shared Backbone: False
+Number of Frames: 16
+Frame Size: (192, 192)
+Hidden Dimension: 512
+Number of Heads: 4
+Number of Layers: 2
+
+TRAINING CONFIGURATION:
+----------------------------------------
+Epochs: 20
+Batch Size: 4
+Learning Rate: 0.0001
+Optimizer: adam
+Scheduler: step
+Action Loss: cross_entropy
+Actor Loss: cross_entropy
+Mixed Precision: True
+
+DATASET STATISTICS:
+----------------------------------------
+Train Samples: 2647
+Validation Samples: 567
+Test Samples: 568
+Action Classes: 8
+Actor Classes: 7
+
+BEST VALIDATION RESULTS:
+----------------------------------------
+Best Combined Accuracy: 65.78%
+Best Action Accuracy: 72.13%
+Best Actor Accuracy: 87.30%
+
+TEST RESULTS:
+----------------------------------------
+Test Loss: 3.8409
+Test Action Accuracy: 67.43%
+Test Actor Accuracy: 83.78%
+Test Combined Accuracy: 60.32%
+Test Action F1: 0.6693
+Test Actor F1: 0.8361
+
+ACTION-ACTOR MAPPINGS:
+----------------------------------------
+climbing: adult, baby, bird, cat
+crawling: adult, baby, dog
+eating: adult, bird, cat, dog
+flying: ball, bird, car
+jumping: adult, ball, bird, car, cat, dog
+rolling: adult, baby, ball, bird, car, cat, dog
+running: adult, car, cat, dog
+walking: adult, baby, bird, cat, dog
+
+================================================================================
+EXPERIMENT COMPLETED SUCCESSFULLY
+================================================================================

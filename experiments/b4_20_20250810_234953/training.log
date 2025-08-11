@@ -1,0 +1,30 @@
+2025-08-10 23:49:53,833 - INFO - Starting simplified training...
+2025-08-10 23:49:53,834 - INFO - Dataset: 2647 train, 567 val, 568 test
+2025-08-11 00:24:18,737 - INFO - Saved best checkpoint with accuracy: 25.04%
+2025-08-11 00:24:18,738 - INFO - Epoch 1/20 - Train Loss: 1.0035, Val Loss: 0.5315, Val Action Acc: 41.62%, Val Actor Acc: 62.61%, Val Combined Acc: 25.04%
+2025-08-11 00:57:46,393 - INFO - Saved best checkpoint with accuracy: 43.21%
+2025-08-11 00:57:46,393 - INFO - Epoch 2/20 - Train Loss: 0.6716, Val Loss: 0.3726, Val Action Acc: 55.73%, Val Actor Acc: 73.90%, Val Combined Acc: 43.21%
+2025-08-11 01:31:15,765 - INFO - Saved best checkpoint with accuracy: 47.27%
+2025-08-11 01:31:15,766 - INFO - Epoch 3/20 - Train Loss: 0.5054, Val Loss: 0.3477, Val Action Acc: 58.20%, Val Actor Acc: 75.66%, Val Combined Acc: 47.27%
+2025-08-11 02:04:42,612 - INFO - Saved best checkpoint with accuracy: 54.14%
+2025-08-11 02:04:42,613 - INFO - Epoch 4/20 - Train Loss: 0.4222, Val Loss: 0.3096, Val Action Acc: 61.55%, Val Actor Acc: 81.66%, Val Combined Acc: 54.14%
+2025-08-11 02:38:12,884 - INFO - Epoch 5/20 - Train Loss: 0.3704, Val Loss: 0.3193, Val Action Acc: 61.02%, Val Actor Acc: 80.07%, Val Combined Acc: 52.38%
+2025-08-11 03:11:40,314 - INFO - Saved best checkpoint with accuracy: 55.56%
+2025-08-11 03:11:40,315 - INFO - Epoch 6/20 - Train Loss: 0.3749, Val Loss: 0.3008, Val Action Acc: 65.61%, Val Actor Acc: 81.13%, Val Combined Acc: 55.56%
+2025-08-11 03:45:11,871 - INFO - Saved best checkpoint with accuracy: 59.26%
+2025-08-11 03:45:11,872 - INFO - Epoch 7/20 - Train Loss: 0.3084, Val Loss: 0.2891, Val Action Acc: 68.43%, Val Actor Acc: 83.25%, Val Combined Acc: 59.26%
+2025-08-11 04:18:39,959 - INFO - Saved best checkpoint with accuracy: 59.44%
+2025-08-11 04:18:39,960 - INFO - Epoch 8/20 - Train Loss: 0.2573, Val Loss: 0.2812, Val Action Acc: 67.55%, Val Actor Acc: 85.71%, Val Combined Acc: 59.44%
+2025-08-11 04:52:11,275 - INFO - Saved best checkpoint with accuracy: 60.14%
+2025-08-11 04:52:11,276 - INFO - Epoch 9/20 - Train Loss: 0.2089, Val Loss: 0.2995, Val Action Acc: 68.78%, Val Actor Acc: 85.89%, Val Combined Acc: 60.14%
+2025-08-11 05:25:39,646 - INFO - Epoch 10/20 - Train Loss: 0.1735, Val Loss: 0.3038, Val Action Acc: 70.02%, Val Actor Acc: 82.89%, Val Combined Acc: 60.14%
+2025-08-11 05:59:08,132 - INFO - Saved best checkpoint with accuracy: 61.55%
+2025-08-11 05:59:08,133 - INFO - Epoch 11/20 - Train Loss: 0.1436, Val Loss: 0.3205, Val Action Acc: 70.19%, Val Actor Acc: 85.71%, Val Combined Acc: 61.55%
+2025-08-11 06:32:36,094 - INFO - Epoch 12/20 - Train Loss: 0.1194, Val Loss: 0.3275, Val Action Acc: 71.25%, Val Actor Acc: 83.25%, Val Combined Acc: 61.55%
+2025-08-11 07:07:21,093 - INFO - Epoch 13/20 - Train Loss: 0.1111, Val Loss: 0.3599, Val Action Acc: 66.84%, Val Actor Acc: 86.07%, Val Combined Acc: 59.26%
+2025-08-11 07:44:47,908 - INFO - Epoch 14/20 - Train Loss: 0.1058, Val Loss: 0.3355, Val Action Acc: 69.84%, Val Actor Acc: 85.01%, Val Combined Acc: 61.38%
+2025-08-11 08:18:28,955 - INFO - Saved best checkpoint with accuracy: 64.55%
+2025-08-11 08:18:28,956 - INFO - Epoch 15/20 - Train Loss: 0.0999, Val Loss: 0.3166, Val Action Acc: 71.43%, Val Actor Acc: 87.65%, Val Combined Acc: 64.55%
+2025-08-11 08:51:58,716 - INFO - Epoch 16/20 - Train Loss: 0.1306, Val Loss: 0.3264, Val Action Acc: 70.37%, Val Actor Acc: 85.19%, Val Combined Acc: 62.61%
+2025-08-11 09:25:26,676 - INFO - Epoch 17/20 - Train Loss: 0.1132, Val Loss: 0.3339, Val Action Acc: 71.78%, Val Actor Acc: 85.19%, Val Combined Acc: 64.02%
+2025-08-11 09:29:49,176 - INFO - Saved final checkpoint
